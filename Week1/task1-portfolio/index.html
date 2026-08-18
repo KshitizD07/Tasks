@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kshitiz Dixit - Web Developer Portfolio. Showcasing Web Dev Intern Week 1 Projects & Technical Skills.">
+  <title>Kshitiz Dixit | Web Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#1e1b4b',
+            },
+            dark: {
+              bg: '#0b0f19',
+              card: '#111827',
+              border: '#1f293d',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header & Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-slate-200 dark:border-dark-border transition-colors duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-purple-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+          KD
+        </div>
+        <span class="text-xl font-extrabold tracking-tight">Kshitiz<span class="text-brand-500">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">About</a>
+        <a href="#skills" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Projects</a>
+        <a href="#contact" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Nav Right Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Theme Switcher Toggle -->
+        <button id="theme-toggle" type="button" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+        </button>
+
+        <!-- CTA Hire Button -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all">
+          <i class="fa-regular fa-paper-plane"></i> Get In Touch
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-700 dark:text-slate-200 flex items-center justify-center">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card px-4 pt-2 pb-6 space-y-3">
+      <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-[calc(100vh-80px)] flex items-center justify-center py-20 relative overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/15 dark:bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-500/30 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-wider mb-6">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for Web Dev Roles
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+              Hi, I'm <span class="bg-gradient-to-r from-brand-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">Kshitiz Dixit</span>
+              <br>Web Developer Intern
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+              Passionate about building responsive, modern web applications with clean code, modern UX principles, and robust frontend engineering.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10">
+              <a href="#projects" class="px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold shadow-lg shadow-brand-500/30 hover:-translate-y-0.5 transition-all">
+                Explore Week 1 Projects <i class="fa-solid fa-arrow-down ml-2"></i>
+              </a>
+              <a href="#contact" class="px-7 py-3.5 rounded-xl bg-slate-200 dark:bg-dark-card border border-slate-300 dark:border-dark-border text-slate-800 dark:text-slate-200 font-bold hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                Contact Me
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center lg:justify-start gap-5">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Connect:</span>
+              <a href="https://github.com/kshitizd171" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 flex items-center justify-center transition-all" aria-label="GitHub">
+                <i class="fa-brands fa-github text-lg"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 flex items-center justify-center transition-all" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin text-lg"></i>
+              </a>
+              <a href="mailto:kshitizd171@gmail.com" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-500 flex items-center justify-center transition-all" aria-label="Email">
+                <i class="fa-solid fa-envelope text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual Card -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-md">
+              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-600 to-purple-600 blur opacity-40 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div class="relative bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-8 shadow-2xl space-y-6">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  </div>
+                  <span class="text-xs font-mono text-slate-400">developer_profile.json</span>
+                </div>
+
+                <div class="font-mono text-xs sm:text-sm space-y-2 bg-slate-900 text-slate-200 p-5 rounded-2xl overflow-x-auto shadow-inner">
+                  <p><span class="text-purple-400">const</span> <span class="text-brand-400">developer</span> = {</p>
+                  <p class="pl-4"><span class="text-cyan-400">name</span>: <span class="text-emerald-300">"Kshitiz Dixit"</span>,</p>
+                  <p class="pl-4"><span class="text-cyan-400">role</span>: <span class="text-emerald-300">"Web Developer Intern"</span>,</p>
+                  <p class="pl-4"><span class="text-cyan-400">week1Tasks</span>: [</p>
+                  <p class="pl-8 text-amber-300">"Personal Portfolio",</p>
+                  <p class="pl-8 text-amber-300">"Responsive Landing Page",</p>
+                  <p class="pl-8 text-amber-300">"JS To-Do Workspace"</p>
+                  <p class="pl-4">],</p>
+                  <p class="pl-4"><span class="text-cyan-400">status</span>: <span class="text-emerald-300">"Completed & Operational 🚀"</span></p>
+                  <p>};</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 pt-2 text-center">
+                  <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <span class="block text-2xl font-extrabold text-brand-600 dark:text-brand-400">3/3</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Tasks Built</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <span class="block text-2xl font-extrabold text-purple-600 dark:text-purple-400">100%</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Responsive</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                    <span class="block text-2xl font-extrabold text-emerald-500">Pure</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Clean Code</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-slate-100/60 dark:bg-dark-card/40 border-y border-slate-200 dark:border-dark-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">BACKGROUND</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">About Me</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-base mt-4">
+            Building web experiences with strong semantic fundamentals and modern design aesthetics.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-dark-card p-8 rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Semantic Web Foundations</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Writing clean, accessible HTML5 and CSS3 code structure following standards, responsiveness, and web design best practices.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card p-8 rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Interactive JavaScript</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Manipulating the DOM efficiently, handling user event listeners, input validation, and persisting application state using LocalStorage.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card p-8 rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Mobile-First Layouts</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Crafting fluid interfaces using Flexbox, CSS Grid, media queries, and Tailwind utility classes for flawless display on all screen sizes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">TECHNICAL STACK</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">Skills & Technologies</h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">HTML5</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Semantic Markup</span>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">CSS3</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Flexbox & Grid</span>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-brands fa-square-js text-4xl text-amber-400 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">JavaScript</h4>
+            <span class="text-[11px] text-slate-400 font-medium">DOM & ES6+</span>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-solid fa-wind text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">Tailwind CSS</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Utility-First</span>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-brands fa-git-alt text-4xl text-red-500 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">Git & GitHub</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Version Control</span>
+          </div>
+
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border p-6 rounded-2xl text-center hover:border-brand-500/50 hover:shadow-lg transition-all group">
+            <i class="fa-solid fa-mobile-screen text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-sm">Responsive UX</h4>
+            <span class="text-[11px] text-slate-400 font-medium">Mobile-First</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Linking Tasks 2 & 3 Directly!) -->
+    <section id="projects" class="py-20 bg-slate-100/60 dark:bg-dark-card/40 border-y border-slate-200 dark:border-dark-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">PORTFOLIO SHOWCASE</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">Featured Week 1 Projects</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-base mt-4">
+            Click on any project below to launch its full live working application.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 Card: Task 2 Landing Page -->
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+            <div class="p-8 bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-950 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
+              <div class="flex items-center justify-between z-10">
+                <span class="px-3 py-1 rounded-full bg-brand-500/30 border border-brand-400/40 text-brand-300 text-xs font-bold uppercase tracking-wider">
+                  Week 1 • Task 2
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 group-hover:text-white transition-colors"></i>
+              </div>
+              <div class="z-10 mt-6">
+                <h3 class="text-2xl font-extrabold text-white mb-2">NovaPulse Landing Page</h3>
+                <p class="text-slate-300 text-sm">Next-Gen AI Workflow Automation SaaS Landing Page built with pure Vanilla HTML & CSS Flexbox/Grid.</p>
+              </div>
+            </div>
+            
+            <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Key Challenges Fulfilling PDF:</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Pure Mobile-First layout without Tailwind</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Interactive Monthly / Annual Pricing Toggle</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Clickable FAQ Accordion & Drawer Navigation</li>
+                </ul>
+              </div>
+
+              <div class="pt-4 border-t border-slate-100 dark:border-dark-border flex items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">HTML5</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Flexbox/Grid</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Vanilla JS</span>
+                </div>
+                
+                <!-- Link directly to Task 2 folder! -->
+                <a href="../task2-landing-page/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all shadow-md shadow-brand-500/20">
+                  Open Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 Card: Task 3 JS To-Do List -->
+          <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+            <div class="p-8 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
+              <div class="flex items-center justify-between z-10">
+                <span class="px-3 py-1 rounded-full bg-purple-500/30 border border-purple-400/40 text-purple-300 text-xs font-bold uppercase tracking-wider">
+                  Week 1 • Task 3
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 group-hover:text-white transition-colors"></i>
+              </div>
+              <div class="z-10 mt-6">
+                <h3 class="text-2xl font-extrabold text-white mb-2">TaskPulse JS To-Do Workspace</h3>
+                <p class="text-slate-300 text-sm">Interactive Task Management app featuring full CRUD, priority tags, filters, and LocalStorage state persistence.</p>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between space-y-6">
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Key Challenges Fulfilling PDF:</h4>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> JavaScript DOM manipulation & event handling</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Input validation & Toast notifications</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> LocalStorage auto-save & progress bar visuals</li>
+                </ul>
+              </div>
+
+              <div class="pt-4 border-t border-slate-100 dark:border-dark-border flex items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">JavaScript</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">DOM API</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">LocalStorage</span>
+                </div>
+
+                <!-- Link directly to Task 3 folder! -->
+                <a href="../task3-todo-app/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition-all shadow-md shadow-purple-500/20">
+                  Open Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl p-8 sm:p-12 shadow-xl">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">GET IN TOUCH</span>
+            <h2 class="text-3xl font-extrabold tracking-tight mt-2">Let's Work Together</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">
+              Have a question or looking for a web development intern? Send me a message below!
+            </p>
+          </div>
+
+          <form id="contact-form" class="space-y-6" onsubmit="event.preventDefault();">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Your Name *</label>
+                <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-dark-border text-slate-900 dark:text-slate-100 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all text-sm">
+              </div>
+
+              <div>
+                <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Your Email *</label>
+                <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-dark-border text-slate-900 dark:text-slate-100 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Subject</label>
+              <input type="text" id="contact-subject" placeholder="Project Inquiry / Internship Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-dark-border text-slate-900 dark:text-slate-100 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all text-sm">
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Message *</label>
+              <textarea id="contact-message" rows="4" required placeholder="Type your message here..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-dark-border text-slate-900 dark:text-slate-100 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all text-sm resize-none"></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-500/30 transition-all flex items-center justify-center gap-2">
+              <i class="fa-regular fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-dark-border bg-white dark:bg-dark-bg py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-400">
+      <p>&copy; 2026 Kshitiz Dixit. Web Developer Intern — Week 1 Portfolio Task.</p>
+    </div>
+  </footer>
+
+  <!-- Portfolio Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
