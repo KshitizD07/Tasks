@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaPulse - Next-Gen AI Workflow Automation Platform for modern teams. Streamline operations and boost productivity.">
+  <title>NovaPulse | Next-Gen AI Workflow Automation</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <span class="brand-name">NovaPulse<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#pricing" class="btn btn-secondary btn-sm">Sign In</a>
+        <a href="#pricing" class="btn btn-primary btn-sm">Start Free Trial</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">NovaPulse 2.0 Released</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <h1 class="hero-title">
+            Automate Your Workflows with <span class="text-gradient">Intelligent AI</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            NovaPulse connects your tools, automates repetitive tasks, and delivers real-time business insights—all without writing a single line of code.
+          </p>
+
+          <form class="hero-form" id="hero-form" onsubmit="event.preventDefault();">
+            <div class="input-group">
+              <i class="fa-regular fa-envelope input-icon"></i>
+              <input type="email" placeholder="Enter your work email..." required id="hero-email">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">
+              Get Started Free <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+
+          <div class="hero-trust">
+            <div class="avatar-group">
+              <span class="avatar">JS</span>
+              <span class="avatar">MK</span>
+              <span class="avatar">AD</span>
+              <span class="avatar">+</span>
+            </div>
+            <div class="trust-text">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>Trusted by <strong>10,000+</strong> teams worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="preview-card main-preview">
+            <div class="card-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Workflow Engine</span>
+            </div>
+            <div class="card-body">
+              <div class="workflow-step active">
+                <div class="step-icon blue"><i class="fa-solid fa-inbox"></i></div>
+                <div class="step-details">
+                  <h4>New Lead Received</h4>
+                  <p>Triggered from HubSpot Webhook</p>
+                </div>
+                <span class="status-tag success">Completed</span>
+              </div>
+
+              <div class="connector-line"></div>
+
+              <div class="workflow-step active">
+                <div class="step-icon purple"><i class="fa-solid fa-brain"></i></div>
+                <div class="step-details">
+                  <h4>AI Lead Enrichment</h4>
+                  <p>Scoring lead intent & clearbit data</p>
+                </div>
+                <span class="status-tag success">Completed</span>
+              </div>
+
+              <div class="connector-line"></div>
+
+              <div class="workflow-step active">
+                <div class="step-icon green"><i class="fa-brands fa-slack"></i></div>
+                <div class="step-details">
+                  <h4>Notify Sales Channel</h4>
+                  <p>Slack alert sent to #sales-leads</p>
+                </div>
+                <span class="status-tag success">Completed</span>
+              </div>
+            </div>
+            <div class="metrics-bar">
+              <div class="metric-item">
+                <span class="metric-label">Efficiency Gain</span>
+                <span class="metric-value">+340%</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Execution Time</span>
+                <span class="metric-value">1.2s</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Success Rate</span>
+                <span class="metric-value">99.9%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Cloud -->
+    <section class="logos-section">
+      <div class="container">
+        <p class="logos-title">POWERING HIGH-GROWTH TEAMS EVERYWHERE</p>
+        <div class="logos-grid">
+          <span class="logo-item"><i class="fa-brands fa-github"></i> GitHub</span>
+          <span class="logo-item"><i class="fa-brands fa-stripe"></i> Stripe</span>
+          <span class="logo-item"><i class="fa-brands fa-figma"></i> Figma</span>
+          <span class="logo-item"><i class="fa-brands fa-atlassian"></i> Atlassian</span>
+          <span class="logo-item"><i class="fa-brands fa-shopify"></i> Shopify</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">POWERFUL FEATURES</span>
+          <h2 class="section-title">Everything you need to automate your business</h2>
+          <p class="section-subtitle">Eliminate tedious manual tasks and let NovaPulse handle complex cross-app operations automatically.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon icon-blue">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3 class="feature-title">Visual Workflow Builder</h3>
+            <p class="feature-desc">Drag-and-drop triggers, filters, and actions. Build multi-step automations visually without code.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-purple">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="feature-title">AI Content & Data Agents</h3>
+            <p class="feature-desc">Leverage built-in LLM models to summarize documents, extract insights, and draft personalized responses.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-emerald">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+            <h3 class="feature-title">Instant Webhook Triggers</h3>
+            <p class="feature-desc">Real-time event processing with sub-second latency. React instantly to customer events as they happen.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-amber">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="feature-title">Enterprise Security</h3>
+            <p class="feature-desc">SOC2 Type II certified, end-to-end data encryption, and role-based access control built in.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-rose">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Real-Time Analytics</h3>
+            <p class="feature-desc">Monitor task executions, error rates, and time saved through intuitive operational dashboards.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-cyan">
+              <i class="fa-solid fa-plug"></i>
+            </div>
+            <h3 class="feature-title">500+ App Integrations</h3>
+            <p class="feature-desc">Connect seamlessly with Slack, Salesforce, Google Workspace, Notion, Jira, and custom REST APIs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">SIMPLE PROCESS</span>
+          <h2 class="section-title">Up and running in under 5 minutes</h2>
+          <p class="section-subtitle">Three simple steps to transform how your team gets work done.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Connect Your Tools</h3>
+            <p>Authenticate your favorite web apps with 1-click secure OAuth authorization.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Define AI Triggers</h3>
+            <p>Set up rules or select pre-built templates for sales, marketing, or support.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Watch It Autopilot</h3>
+            <p>Sit back while NovaPulse executes thousands of automated workflows smoothly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">TRANSPARENT PRICING</span>
+          <h2 class="section-title">Simple plans for teams of all sizes</h2>
+          <p class="section-subtitle">Start free for 14 days. No credit card required.</p>
+
+          <div class="pricing-toggle-wrapper">
+            <span class="toggle-label" id="monthly-label">Monthly</span>
+            <button class="pricing-toggle" id="pricing-toggle" aria-label="Toggle Billing Cycle">
+              <span class="toggle-circle"></span>
+            </button>
+            <span class="toggle-label active" id="yearly-label">Annual <span class="discount-badge">Save 20%</span></span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter Plan -->
+          <div class="pricing-card">
+            <div class="plan-header">
+              <h3 class="plan-name">Starter</h3>
+              <p class="plan-desc">For individuals and small projects getting started.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount" data-monthly="19" data-yearly="15">15</span>
+                <span class="period">/ month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> Up to 2,500 tasks / mo</li>
+              <li><i class="fa-solid fa-check"></i> 5 Active workflows</li>
+              <li><i class="fa-solid fa-check"></i> Standard integrations</li>
+              <li><i class="fa-solid fa-check"></i> Email support</li>
+            </ul>
+            <a href="#" class="btn btn-outline btn-full">Choose Starter</a>
+          </div>
+
+          <!-- Pro Plan (Featured) -->
+          <div class="pricing-card popular">
+            <div class="popular-badge">MOST POPULAR</div>
+            <div class="plan-header">
+              <h3 class="plan-name">Pro</h3>
+              <p class="plan-desc">For growing teams requiring powerful AI features.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount" data-monthly="49" data-yearly="39">39</span>
+                <span class="period">/ month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> Up to 25,000 tasks / mo</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited workflows</li>
+              <li><i class="fa-solid fa-check"></i> AI Agent capabilities</li>
+              <li><i class="fa-solid fa-check"></i> Premium 500+ integrations</li>
+              <li><i class="fa-solid fa-check"></i> Priority 24/7 support</li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-full">Start 14-Day Free Trial</a>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="pricing-card">
+            <div class="plan-header">
+              <h3 class="plan-name">Enterprise</h3>
+              <p class="plan-desc">Custom controls, SLA, and dedicated support for scale.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount" data-monthly="149" data-yearly="119">119</span>
+                <span class="period">/ month</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-check"></i> Unlimited tasks & execution</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated SLA & uptime</li>
+              <li><i class="fa-solid fa-check"></i> Custom Webhooks & API</li>
+              <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+              <li><i class="fa-solid fa-check"></i> SSO & SAML Security</li>
+            </ul>
+            <a href="#" class="btn btn-outline btn-full">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+      <div class="container max-width-md">
+        <div class="section-header text-center">
+          <span class="section-badge">GOT QUESTIONS?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Do I need coding skills to use NovaPulse?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Not at all! NovaPulse is designed as a no-code visual platform. Anyone on your team can create powerful automations using our drag-and-drop builder and pre-configured templates.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I upgrade or downgrade my plan anytime?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! You can seamlessly switch between plans or switch between monthly and annual billing directly from your account settings at any time.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How safe is my company data?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We take data security extremely seriously. NovaPulse is SOC2 Type II compliant and uses AES 256-bit encryption in transit and at rest. We never sell or store unencrypted customer tokens.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is there a free trial available?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we offer a 14-day free trial on our Pro plan with full access to all AI features—no credit card required to start!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box text-center">
+          <h2>Ready to transform your productivity?</h2>
+          <p>Join thousands of modern teams automating work with NovaPulse today.</p>
+          <div class="cta-actions">
+            <a href="#pricing" class="btn btn-primary btn-lg">Start Free Trial Now</a>
+            <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+          <span class="brand-name">NovaPulse<span class="dot">.</span></span>
+        </a>
+        <p>The next-generation AI automation platform empowering teams to work smarter.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 NovaPulse Inc. All rights reserved. Web Dev Intern Week 1 Task 2.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
