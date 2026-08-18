@@ -704,3 +704,42 @@ input[type="text"]:focus, input[type="date"]:focus, select:focus {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+
+/* Footer Socials */
+.app-footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background-color: var(--clr-card-bg);
+  border: 1px solid var(--clr-card-border);
+  border-radius: var(--radius-lg);
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+
+.app-footer-socials .footer-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.app-footer-socials .footer-links a {
+  color: var(--clr-text-muted);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.app-footer-socials .footer-links a:hover {
+  color: var(--clr-primary);
+}
+
+@media (min-width: 640px) {
+  .app-footer-socials {
+    flex-direction: row;
+  }
+}
+
