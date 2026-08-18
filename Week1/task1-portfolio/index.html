@@ -23,17 +23,18 @@
         extend: {
           colors: {
             brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              900: '#1e1b4b',
+              50: '#fff1ef',    /* lightest coral tint */
+              100: '#ffddd8',
+              400: '#ff8a7a',
+              500: '#FF5C5C',   /* electric coral — primary */
+              600: '#e64040',
+              700: '#c73232',
+              900: '#1a0808',
             },
             dark: {
-              bg: '#0b0f19',
-              card: '#111827',
-              border: '#1f293d',
+              bg: '#050D1A',    /* midnight navy */
+              card: '#0B1628',
+              border: '#142240',
             }
           },
           fontFamily: {
@@ -113,7 +114,7 @@
             </div>
 
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-              Hi, I'm <span class="bg-gradient-to-r from-brand-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">Kshitiz Dixit</span>
+              Hi, I'm <span class="bg-gradient-to-r from-brand-500 via-orange-400 to-amber-300 bg-clip-text text-transparent">Kshitiz Dixit</span>
               <br>Web Developer Intern
             </h1>
 
@@ -302,16 +303,16 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Project 1 Card: Task 2 Landing Page -->
           <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="p-8 bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-950 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
+            <div class="p-8 bg-gradient-to-br from-[#070E08] via-[#0D1A0E] to-[#070E08] text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
               <div class="flex items-center justify-between z-10">
-                <span class="px-3 py-1 rounded-full bg-brand-500/30 border border-brand-400/40 text-brand-300 text-xs font-bold uppercase tracking-wider">
+                <span class="px-3 py-1 rounded-full bg-[#9EFF57]/20 border border-[#9EFF57]/30 text-[#9EFF57] text-xs font-bold uppercase tracking-wider">
                   Week 1 • Task 2
                 </span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 group-hover:text-white transition-colors"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[#4ADE80]/60 group-hover:text-[#9EFF57] transition-colors"></i>
               </div>
               <div class="z-10 mt-6">
                 <h3 class="text-2xl font-extrabold text-white mb-2">NovaPulse Landing Page</h3>
-                <p class="text-slate-300 text-sm">Next-Gen AI Workflow Automation SaaS Landing Page built with pure Vanilla HTML & CSS Flexbox/Grid.</p>
+                <p class="text-[#6B8F6B] text-sm">Next-Gen AI Workflow Automation SaaS Landing Page built with pure Vanilla HTML &amp; CSS Flexbox/Grid.</p>
               </div>
             </div>
             
@@ -321,7 +322,7 @@
                 <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
                   <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Pure Mobile-First layout without Tailwind</li>
                   <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Interactive Monthly / Annual Pricing Toggle</li>
-                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Clickable FAQ Accordion & Drawer Navigation</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Clickable FAQ Accordion &amp; Drawer Navigation</li>
                 </ul>
               </div>
 
@@ -333,7 +334,7 @@
                 </div>
                 
                 <!-- Link directly to Task 2 folder! -->
-                <a href="../task2-landing-page/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all shadow-md shadow-brand-500/20">
+                <a href="../task2-landing-page/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#9EFF57] hover:bg-[#c6ff8f] text-[#0b1f00] font-bold text-sm transition-all shadow-md shadow-[#9EFF57]/25">
                   Open Project <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
@@ -342,16 +343,16 @@
 
           <!-- Project 2 Card: Task 3 JS To-Do List -->
           <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="p-8 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
+            <div class="p-8 bg-gradient-to-br from-[#0E0518] via-[#18062A] to-[#0E0518] text-white relative min-h-[220px] flex flex-col justify-between overflow-hidden">
               <div class="flex items-center justify-between z-10">
-                <span class="px-3 py-1 rounded-full bg-purple-500/30 border border-purple-400/40 text-purple-300 text-xs font-bold uppercase tracking-wider">
+                <span class="px-3 py-1 rounded-full bg-[#B67DFF]/20 border border-[#B67DFF]/30 text-[#B67DFF] text-xs font-bold uppercase tracking-wider">
                   Week 1 • Task 3
                 </span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 group-hover:text-white transition-colors"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[#B67DFF]/50 group-hover:text-[#FF6B6B] transition-colors"></i>
               </div>
               <div class="z-10 mt-6">
                 <h3 class="text-2xl font-extrabold text-white mb-2">TaskPulse JS To-Do Workspace</h3>
-                <p class="text-slate-300 text-sm">Interactive Task Management app featuring full CRUD, priority tags, filters, and LocalStorage state persistence.</p>
+                <p class="text-[#8B70A8] text-sm">Interactive Task Management app featuring full CRUD, priority tags, filters, and LocalStorage state persistence.</p>
               </div>
             </div>
 
@@ -359,9 +360,9 @@
               <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Key Challenges Fulfilling PDF:</h4>
                 <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> JavaScript DOM manipulation & event handling</li>
-                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Input validation & Toast notifications</li>
-                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> LocalStorage auto-save & progress bar visuals</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> JavaScript DOM manipulation &amp; event handling</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Input validation &amp; Toast notifications</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> LocalStorage auto-save &amp; progress bar visuals</li>
                 </ul>
               </div>
 
@@ -373,13 +374,14 @@
                 </div>
 
                 <!-- Link directly to Task 3 folder! -->
-                <a href="../task3-todo-app/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm transition-all shadow-md shadow-purple-500/20">
+                <a href="../task3-todo-app/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#B67DFF] hover:bg-[#C89BFF] text-[#0E0518] font-bold text-sm transition-all shadow-md shadow-[#B67DFF]/25">
                   Open Project <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
