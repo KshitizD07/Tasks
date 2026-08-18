@@ -5,32 +5,35 @@
  * ------------------------------------------------------------- */
 
 /* 1. CSS Custom Properties / Design Tokens */
+/* Palette: Deep Forest Green + Electric Lime + Ivory */
 :root {
-  /* Color Palette */
-  --clr-primary: #4f46e5;
-  --clr-primary-hover: #4338ca;
-  --clr-primary-light: #e0e7ff;
-  
-  --clr-secondary: #0f172a;
-  --clr-secondary-hover: #1e293b;
-  
-  --clr-accent: #06b6d4;
-  --clr-accent-purple: #8b5cf6;
-  --clr-accent-emerald: #10b981;
-  --clr-accent-amber: #f59e0b;
-  
-  --clr-bg-page: #0b0f19;
-  --clr-bg-card: #111827;
-  --clr-bg-card-hover: #1f2937;
-  --clr-bg-nav: rgba(11, 15, 25, 0.85);
-  
-  --clr-border: #1f293d;
-  --clr-border-glow: rgba(99, 102, 241, 0.3);
-  
-  --clr-text-main: #f8fafc;
-  --clr-text-muted: #94a3b8;
-  --clr-text-dark: #0f172a;
-  
+  /* ---- Core Brand ---- */
+  --clr-primary: #9EFF57;          /* electric lime — main CTA */
+  --clr-primary-hover: #c6ff8f;
+  --clr-primary-light: #d9ffb0;
+  --clr-primary-text: #0b1f00;     /* text on lime buttons */
+
+  /* ---- Background Layers ---- */
+  --clr-bg-page: #070E08;          /* near-black forest */
+  --clr-bg-card: #0D1A0E;
+  --clr-bg-card-hover: #152416;
+  --clr-bg-nav: rgba(7, 14, 8, 0.88);
+
+  /* ---- Borders ---- */
+  --clr-border: #1b3320;
+  --clr-border-glow: rgba(158, 255, 87, 0.18);
+
+  /* ---- Accent Colors ---- */
+  --clr-accent: #4ADE80;           /* soft green */
+  --clr-accent-purple: #a855f7;
+  --clr-accent-emerald: #4ADE80;
+  --clr-accent-amber: #facc15;
+
+  /* ---- Text ---- */
+  --clr-text-main: #F0FFF0;        /* honeydew — warm white with green tint */
+  --clr-text-muted: #6B8F6B;
+  --clr-text-dark: #070E08;
+
   /* Typography */
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --fs-xs: 0.75rem;
@@ -41,19 +44,19 @@
   --fs-2xl: 1.5rem;
   --fs-3xl: 2rem;
   --fs-4xl: 2.75rem;
-  
+
   /* Layout & Spacing */
   --container-max-width: 1200px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-full: 9999px;
-  
+
   /* Shadows & Glows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 35px rgba(79, 70, 229, 0.25);
-  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(158, 255, 87, 0.15);
+
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -113,7 +116,7 @@ img {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #9EFF57 0%, #4ADE80 45%, #a3e635 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -125,7 +128,7 @@ img {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
@@ -150,18 +153,18 @@ img {
 
 .btn-primary {
   background-color: var(--clr-primary);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  color: #0b1f00;                          /* dark forest on bright lime */
+  box-shadow: 0 4px 18px rgba(158, 255, 87, 0.35);
 }
 
 .btn-primary:hover {
   background-color: var(--clr-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+  box-shadow: 0 6px 28px rgba(158, 255, 87, 0.5);
 }
 
 .btn-secondary {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.05);
   color: var(--clr-text-main);
   border-color: var(--clr-border);
 }
@@ -180,7 +183,7 @@ img {
 .btn-outline:hover {
   border-color: var(--clr-primary);
   color: var(--clr-primary-light);
-  background-color: rgba(79, 70, 229, 0.1);
+  background-color: rgba(158, 255, 87, 0.08);
 }
 
 /* 5. Header & Navigation */
@@ -215,12 +218,12 @@ img {
 .logo-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent-purple));
+  background: linear-gradient(135deg, #9EFF57, #4ADE80);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #0b1f00;   /* dark text on bright bg */
   font-size: 1.1rem;
 }
 
@@ -313,8 +316,8 @@ img {
   gap: 0.6rem;
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
-  background-color: rgba(79, 70, 229, 0.12);
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  background-color: rgba(158, 255, 87, 0.10);
+  border: 1px solid rgba(158, 255, 87, 0.25);
   font-size: var(--fs-xs);
   font-weight: 600;
   color: #a5b4fc;
@@ -382,7 +385,7 @@ img {
 .hero-form input:focus {
   border-color: var(--clr-primary);
   background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 0 0 3px rgba(158, 255, 87, 0.18);
 }
 
 .hero-trust {
@@ -683,7 +686,7 @@ img {
 .step-number {
   font-size: 2.5rem;
   font-weight: 900;
-  color: rgba(79, 70, 229, 0.3);
+  color: rgba(158, 255, 87, 0.25);
   margin-bottom: 1rem;
   line-height: 1;
 }
@@ -777,7 +780,7 @@ img {
 .pricing-card.popular {
   border-color: var(--clr-primary);
   box-shadow: var(--shadow-glow);
-  background-color: #131b2e;
+  background-color: #0D200F;
 }
 
 .popular-badge {
@@ -785,8 +788,8 @@ img {
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent-purple));
-  color: #fff;
+  background: linear-gradient(135deg, #9EFF57, #4ADE80);
+  color: #0b1f00;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -916,7 +919,7 @@ img {
 }
 
 .cta-box {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.25) 0%, rgba(139, 92, 246, 0.25) 100%), var(--clr-bg-card);
+  background: linear-gradient(135deg, rgba(158, 255, 87, 0.12) 0%, rgba(74, 222, 128, 0.12) 100%), var(--clr-bg-card);
   border: 1px solid var(--clr-primary);
   border-radius: var(--radius-lg);
   padding: 4rem 2rem;
