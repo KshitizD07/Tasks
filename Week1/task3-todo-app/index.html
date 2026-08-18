@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskPulse - Modern Interactive To-Do & Task Management Workspace. Web Dev Intern Week 1 Task 3.">
+  <title>TaskPulse | Interactive To-Do Workspace</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand flex-items-center">
+        <div class="logo-box">
+          <i class="fa-solid fa-check-double"></i>
+        </div>
+        <div>
+          <h1 class="app-title">TaskPulse<span class="dot">.</span></h1>
+          <p class="app-subtitle">Smart JavaScript Task Management Workspace</p>
+        </div>
+      </div>
+
+      <div class="header-stats">
+        <div class="stat-pill">
+          <span class="stat-num" id="total-count">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-pill success">
+          <span class="stat-num" id="completed-count">0</span>
+          <span class="stat-label">Done</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Grid -->
+    <main class="workspace-grid">
+      <!-- Left Sidebar / Task Creation Form -->
+      <aside class="card task-form-card">
+        <h2 class="card-title"><i class="fa-solid fa-plus-circle"></i> Create New Task</h2>
+        
+        <form id="todo-form" novalidate>
+          <div class="form-group">
+            <label for="task-title">Task Title <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-pen input-icon"></i>
+              <input type="text" id="task-title" placeholder="e.g. Design homepage mockup..." required autocomplete="off">
+            </div>
+            <span class="error-msg" id="title-error">Task title cannot be empty</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="task-category">Category</label>
+              <div class="select-wrapper">
+                <i class="fa-solid fa-folder input-icon"></i>
+                <select id="task-category">
+                  <option value="Work">💼 Work</option>
+                  <option value="Personal">🏠 Personal</option>
+                  <option value="Urgent">🔥 Urgent</option>
+                  <option value="Learning">📚 Learning</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group flex-1">
+              <label for="task-priority">Priority</label>
+              <div class="select-wrapper">
+                <i class="fa-solid fa-flag input-icon"></i>
+                <select id="task-priority">
+                  <option value="High">🔴 High</option>
+                  <option value="Medium" selected>🟡 Medium</option>
+                  <option value="Low">🟢 Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="task-duedate">Due Date (Optional)</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-calendar input-icon"></i>
+              <input type="date" id="task-duedate">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-plus"></i> Add Task
+          </button>
+        </form>
+
+        <!-- Progress Overview Box -->
+        <div class="progress-box">
+          <div class="progress-header">
+            <span>Overall Progress</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Main Content / Tasks List -->
+      <section class="card task-list-card">
+        <!-- Search & Controls Bar -->
+        <div class="controls-bar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search tasks by title or category...">
+          </div>
+
+          <div class="filter-tabs" id="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="high">🔥 High Priority</button>
+          </div>
+        </div>
+
+        <!-- Task Items Container -->
+        <div class="tasks-container" id="tasks-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- List Footer / Bulk Actions -->
+        <div class="list-footer">
+          <span class="active-counter" id="active-counter">0 pending items remaining</span>
+          <div class="bulk-actions">
+            <button class="btn btn-ghost btn-sm" id="btn-mark-all">
+              <i class="fa-solid fa-check-double"></i> Mark All Done
+            </button>
+            <button class="btn btn-danger-ghost btn-sm" id="btn-clear-completed">
+              <i class="fa-regular fa-trash-can"></i> Clear Completed
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+  </div>
+
+  <!-- Edit Task Modal -->
+  <div class="modal-overlay" id="edit-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Edit Task</h3>
+        <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="edit-form">
+        <input type="hidden" id="edit-task-id">
+        <div class="form-group">
+          <label for="edit-task-title">Task Title</label>
+          <input type="text" id="edit-task-title" required class="modal-input">
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="edit-task-category">Category</label>
+            <select id="edit-task-category" class="modal-select">
+              <option value="Work">💼 Work</option>
+              <option value="Personal">🏠 Personal</option>
+              <option value="Urgent">🔥 Urgent</option>
+              <option value="Learning">📚 Learning</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label for="edit-task-priority">Priority</label>
+            <select id="edit-task-priority" class="modal-select">
+              <option value="High">🔴 High</option>
+              <option value="Medium">🟡 Medium</option>
+              <option value="Low">🟢 Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
